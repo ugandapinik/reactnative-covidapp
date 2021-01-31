@@ -18,7 +18,7 @@ const DATA = [
     {
         id: 1,
         title: "CORONAVIRUS CASES",
-        number: "1 896 456"
+        number: "1 86 456"
     },
 
     {
@@ -51,7 +51,7 @@ class Home extends Component{
                         <Text style={styles.number}>{item.number}</Text>
                     </View>
 
-                    <View style={{marginLeft:150}}>
+                    <View style={{marginLeft:125}}>
                         <Icon name="md-options" size={24} color="#FFF"/>
                         <Text style={styles.textCovid}>COVID-19</Text>
                     </View>
@@ -182,7 +182,7 @@ const styles = StyleSheet.create({
 
     number:{
         color:"#FFF",
-        width:100,
+        width:120,
         fontSize:22,
         fontWeight:"bold",
         marginTop:-10,
