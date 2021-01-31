@@ -7,6 +7,8 @@
     "version": "1.0.0",
     "assetBundlePatterns": [
       "**/*"
-    ]
+    ],
+    "description": "COVID APPLICATION WITH TINDER DECK",
+    "githubUrl": "https://github.com/wohhie/reactnative-covidapp"
   }
 }
