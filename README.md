@@ -3,9 +3,12 @@
 A mobile application built using REACT NATIVE
 
 ## Screenshot
-<img src="https://user-images.githubusercontent.com/13005159/106375542-8808ee00-6367-11eb-9939-cdf1b09887ae.jpg" width="200">
-
+Dashboard             |  Details
+:-------------------------:|:-------------------------:
+<img src="https://user-images.githubusercontent.com/13005159/106375542-8808ee00-6367-11eb-9939-cdf1b09887ae.jpg" width="200"> |  
 <img src="https://user-images.githubusercontent.com/13005159/106375572-bedf0400-6367-11eb-922d-e48621b1ccd4.jpg" width="200">
+
+
 
 
 ## GIF
