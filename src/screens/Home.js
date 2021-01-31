@@ -110,11 +110,11 @@ class Home extends Component{
                     renderNoMoreCards={this.renderNoMoreCards} />
 
                 <ScrollView 
-                    style={{marginTop:170}}
+                    style={{marginTop:220}}
                     showsHorizontalScrollIndicator={false}
                     horizontal>
                     <Cards
-                        onPress={()=>this.props.navigation.navigate('Detail')}
+                        onPress={() => this.props.navigation.navigate("Detail")}
                         icon="md-pulse"
                         title="TOTAL CASES"
                         bg="red"
@@ -160,7 +160,7 @@ const styles = StyleSheet.create({
         width:320,
         alignSelf:"center",
         backgroundColor:"#6A706E",
-        borderRadius:30
+        borderRadius:30,
     },
 
     card:{
@@ -206,10 +206,11 @@ const styles = StyleSheet.create({
 
     map:{
         height:200,
-        paddingTop:25,
+        paddingTop:50,
         paddingHorizontal:20,
         marginBottom:15
     },
+
 
     col:{
         flexDirection:'row'

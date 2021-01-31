@@ -146,7 +146,8 @@ class Decks extends Component{
 
 const styles = {
     cardStyle: {
-        position: "absolute", 
+        position: "absolute",
+        marginTop: 20, 
         width: SCREEN_WIDTH
     }
 }
