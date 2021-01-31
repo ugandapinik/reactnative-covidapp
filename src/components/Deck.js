@@ -49,13 +49,13 @@ class Decks extends Component{
     }
 
 
-    componentWillReceiveProps(nextProps){
+    UNSAFE_componentWillReceiveProps(nextProps){
         if(nextProps.data !== this.props.data){
             this.setState({ index: 0 })
         }
     }
 
-    componentWillUpdate(){
+    UNSAFE_componentWillUpdate(){
         UIManager.setLayoutAnimationEnabledExperimental && 
         UIManager.setLayoutAnimationEnabledExperimental(true);
 
@@ -83,10 +83,62 @@ class Decks extends Component{
 
 
     resetPosition() {
-        
+        Animated.spring(
+            this.state.position, {
+                useNativeDriver: false,
+                toValue: {x: 0, y: 0}
+            }).start()
     }
 
 
+    getCardStyle() {
+        const {position} = this.state
+        const rotate = position.x.interpolate({
+            inputRange: [-SCREEN_WIDTH * 1.5, 0, SCREEN_WIDTH * 1.5],
+            outputRange: ["-120deg", "0deg", "120deg"]
+        })
+
+        return {
+            ...position.getLayout(),
+            transform: [{ rotate }]
+        }
+    }
+
+
+    renderCards() {
+        if(this.state.index >= this.props.data.length){
+            return this.props.renderNoMoreCards()
+        }
+
+        return this.props.data.map((item, i) => {
+            if(i < this.state.index){
+                return null;
+            }
+
+            if (i === this.state.index){
+                return (
+                    <Animated.View
+                        key={item.id}
+                        style={[ 
+                            this.getCardStyle(), 
+                            styles.getCardStyle,
+                            { zIndex: 99 }
+                        ]}>
+                        { this.props.renderCards(item) }
+                    </Animated.View>
+                )
+            }
+
+            
+            return (
+                <Animated.View
+                    key={item.id}
+                    style={[ styles.cardStyle]}>
+                        { this.props.renderCard(item)}
+                </Animated.View>
+            )
+        }).reverse()
+    }
 
     static defaultProps = {
         onSwipeRight: () => {},
