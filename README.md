@@ -1,1 +1,1 @@
-# reactnative-covidapp
+# COVID MOBILE APPLICATION
